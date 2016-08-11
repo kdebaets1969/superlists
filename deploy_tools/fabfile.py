@@ -43,7 +43,7 @@ def _update_settings(source_folder, site_name):
             'ALLOWED_HOSTS = ["%s"]' % (site_name,)
     )
     secret_key_file = source_folder + '/superlists/secret_key.py'
-    if not exists(secre_key_file):
+    if not exists(secret_key_file):
         chars = 'abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)'
         key = ''.join(random.SystemRandom().choice(chars) for _ in range(50))
         append(secret_key_file, "SECRET_KEY = '%s'" % (key,))
