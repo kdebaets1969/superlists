@@ -32,7 +32,7 @@ def _get_latest_source(source_folder):
         current_commit = local("git log -n 1 --format=%H", capture=True)
         run('cd %s && git reset --hard %s' % (source_folder, current_commit))
 
-def _update_settings(source_folder, env.host):
+def _update_settings(source_folder, site_name):
     settings_path = source_folder + superlists/settings.py
     sed(settings_path, 
             "DEBUG = True", 
